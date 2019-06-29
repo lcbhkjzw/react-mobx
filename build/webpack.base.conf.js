@@ -13,7 +13,7 @@ console.log(path.resolve(__dirname, '../'))
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: './src/main.ts'
+    app: './src/main.tsx'
   },
   output: {
     path: config.build.assetsRoot,

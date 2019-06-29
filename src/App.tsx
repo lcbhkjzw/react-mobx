@@ -1,10 +1,20 @@
-import React from "react";
-import Router from "./router";
+import React, { Component } from 'react';
+import { inject, observer } from 'mobx-react';
 
-function App () {
+@inject('routing')
+@observer
+export default class App extends Component<{
+  routing?: any
+}> {
+  render() {
+    const { location, push, goBack } = this.props.routing;
+
     return (
-        <Router />
-    )
+      <div>
+        <span>Current pathname: {location.pathname}</span>
+        <button onClick={() => push('/test')}>Change url</button>
+        <button onClick={() => goBack()}>Go Back</button>
+      </div>
+    );
+  }
 }
-
-export default App;

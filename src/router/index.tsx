@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import loadable from 'loadable-components';
 
 const routerMap = [
@@ -18,14 +18,14 @@ const routerMap = [
     }
 })
 
-export default function Router () {
+export default function MyRouter () {
     return (
-        <HashRouter>
+        <React.Fragment>
             {
                 routerMap.map((item, index) => {
                     return <Route key={index} {...item} />
                 })
             }
-        </HashRouter>
+        </React.Fragment>
     )
 }

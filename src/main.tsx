@@ -1,27 +1,30 @@
-import React from 'react';
-import {render} from 'react-dom';
-import {createBrowserHistory} from 'history';
-import { Provider } from 'mobx-react';
-import { RouterStore, syncHistoryWithStore } from 'mobx-react-router';
-import { Router } from 'react-router';
+import * as React from 'react';
+import { render } from 'react-dom';
+
+
 import App from './App';
+import AppState from './store';
 
-const browserHistory = createBrowserHistory();
-const routingStore = new RouterStore();
 
-const stores = {
-  // Key can be whatever you want
-  routing: routingStore,
-  // ...other stores
-};
+const appState = new AppState();
 
-const history = syncHistoryWithStore(browserHistory, routingStore);
+const container = document.getElementById('react-app');
 
-render(
-  <Provider {...stores}>
-    <Router history={history}>
-      <App />
-    </Router>
-  </Provider>,
-  document.getElementById('react-app')
-);
+
+const renderApp = (TheApp: typeof App) =>
+    render(
+        <TheApp store={appState} />,
+        container
+    );
+
+// if (DEV && module.hot) {
+//   // Accept changes to this file for hot reloading.
+//   module.hot.accept('./index');
+//   // Any changes to our App will cause a hotload re-render.
+//   module.hot.accept(
+//     './components/App',
+//     () => renderApp(require('./components/App').default),
+//   );
+// }
+
+renderApp(App);

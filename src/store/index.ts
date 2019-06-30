@@ -1,29 +1,10 @@
-import { observable, action } from 'mobx';
+import { goodReducer } from "./good";
+import { combineReducers, createStore } from "redux";
 
-export default class AppState {
-  @observable authenticated: string;
-  @observable authenticating: boolean;
-  @observable items: any;
-  @observable item: any;
+export const reducers = combineReducers({
+  good: goodReducer
+})
 
-  constructor() {
-    this.authenticated = 'hello';
-    this.authenticating = false;
-    this.items = [];
-    this.item = {};
-  }
+export const store = createStore(reducers)
 
-  @action setData(data: any) {
-    this.items = data;
-    this.authenticated = 'good'
-  }
-
-  @action setSingle(data: any) {
-    this.item = data;
-  }
-
-  @action clearItems() {
-    this.items = [];
-    this.item = {};
-  }
-}
+export type Store = typeof store;

@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/lcbhk/.nvm/versions/node/v8.13.0/bin/node /Users/lcbhk/.nvm/versions/node/v8.13.0/bin/yarn add -D @types/mobx-react
+  /Users/lcbhk/.nvm/versions/node/v8.13.0/bin/node /Users/lcbhk/.nvm/versions/node/v8.13.0/bin/yarn add redux react-redux redux-sagas
 
 PATH: 
   /opt/local/bin:/opt/local/sbin:/usr/local/flutter/bin:/Users/lcbhk/.cargo/bin:/usr/local/opt/maven@3.5/bin:/Users/lcbhk/Library/android/sdk/platform-tools/:/opt/local/bin:/opt/local/sbin:/usr/local/flutter/bin:/Users/lcbhk/.cargo/bin:/usr/local/opt/maven@3.5/bin:/Users/lcbhk/Library/android/sdk/platform-tools/:/Users/lcbhk/.nvm/versions/node/v8.13.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/go/bin
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: http://registry.npm.taobao.org/@types%2fmobx-react: Not found
+  Error: http://registry.npm.taobao.org/redux-sagas: Not found
       at Request.params.callback [as _callback] (/Users/lcbhk/.nvm/versions/node/v8.13.0/lib/node_modules/yarn/lib/cli.js:65894:18)
       at Request.self.callback (/Users/lcbhk/.nvm/versions/node/v8.13.0/lib/node_modules/yarn/lib/cli.js:129018:22)
       at emitTwo (events.js:126:13)
@@ -37,6 +37,7 @@ npm manifest:
       "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js"
     },
     "devDependencies": {
+      "@types/history": "^4.7.2",
       "@types/react": "^16.8.22",
       "@types/react-dom": "^16.8.4",
       "@types/react-router": "^5.0.2",
@@ -46,6 +47,7 @@ npm manifest:
       "html-webpack-plugin": "^3.2.0",
       "node-notifier": "^5.4.0",
       "portfinder": "^1.0.20",
+      "reflect-metadata": "^0.1.13",
       "ts-loader": "^6.0.4",
       "typescript": "^3.5.2",
       "webpack": "^4.35.0",
@@ -57,6 +59,7 @@ npm manifest:
       "@loadable/component": "^5.10.1",
       "loadable-components": "^2.2.3",
       "mobx": "^5.10.1",
+      "mobx-react": "^6.1.1",
       "mobx-react-router": "^4.0.7",
       "react": "^16.8.6",
       "react-dom": "^16.8.6",
@@ -103,7 +106,7 @@ Lockfile:
       "@types/minimatch" "*"
       "@types/node" "*"
   
-  "@types/history@*":
+  "@types/history@*", "@types/history@^4.7.2":
     version "4.7.2"
     resolved "https://registry.npm.taobao.org/@types/history/download/@types/history-4.7.2.tgz#0e670ea254d559241b6eeb3894f8754991e73220"
     integrity sha1-DmcOolTVWSQbbus4lPh1SZHnMiA=
@@ -2797,6 +2800,11 @@ Lockfile:
     dependencies:
       minimist "0.0.8"
   
+  mobx-react-lite@1.4.0:
+    version "1.4.0"
+    resolved "https://registry.npm.taobao.org/mobx-react-lite/download/mobx-react-lite-1.4.0.tgz#193beb5fdddf17ae61542f65ff951d84db402351"
+    integrity sha1-GTvrX93fF65hVC9l/5UdhNtAI1E=
+  
   mobx-react-router@^4.0.7:
     version "4.0.7"
     resolved "https://registry.npm.taobao.org/mobx-react-router/download/mobx-react-router-4.0.7.tgz#d248a0e0525049f0e37e94f2fb1ab09563be4c35"
@@ -2808,6 +2816,13 @@ Lockfile:
     integrity sha1-uqnsQRZe41rnud8ZvKEBkPNvEX4=
     dependencies:
       hoist-non-react-statics "^2.3.1"
+  
+  mobx-react@^6.1.1:
+    version "6.1.1"
+    resolved "https://registry.npm.taobao.org/mobx-react/download/mobx-react-6.1.1.tgz#24a2c8a3393890fa732b4efd34cc6dcccf6e0e7a"
+    integrity sha1-JKLIozk4kPpzK079NMxtzM9uDno=
+    dependencies:
+      mobx-react-lite "1.4.0"
   
   mobx@^3.5.1:
     version "3.6.2"
@@ -3604,6 +3619,11 @@ Lockfile:
       graceful-fs "^4.1.11"
       micromatch "^3.1.10"
       readable-stream "^2.0.2"
+  
+  reflect-metadata@^0.1.13:
+    version "0.1.13"
+    resolved "https://registry.npm.taobao.org/reflect-metadata/download/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
+    integrity sha1-Z648pXyXKiqhZCsQ/jY/4y1J3Ag=
   
   regenerator-runtime@^0.13.2:
     version "0.13.2"

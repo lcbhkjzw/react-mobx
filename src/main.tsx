@@ -1,21 +1,11 @@
-import * as React from 'react';
-import { render } from 'react-dom';
+import * as React from "react";
+import { render } from "react-dom";
 
+import App from "./App";
 
-import App from './App';
-import AppState from './store';
+const container = document.getElementById("react-app");
 
-
-const appState = new AppState();
-
-const container = document.getElementById('react-app');
-
-
-const renderApp = (TheApp: typeof App) =>
-    render(
-        <TheApp store={appState} />,
-        container
-    );
+render(<App />, container);
 
 // if (DEV && module.hot) {
 //   // Accept changes to this file for hot reloading.
@@ -26,5 +16,3 @@ const renderApp = (TheApp: typeof App) =>
 //     () => renderApp(require('./components/App').default),
 //   );
 // }
-
-renderApp(App);

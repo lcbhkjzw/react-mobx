@@ -26,7 +26,7 @@ const mapAction2Props = (dispatch: Dispatch) => {
     }
 }
 
-function Good ({
+const Good = React.memo(function Good ({
     content,
     dispatch
 }: GoodProps) {
@@ -40,6 +40,6 @@ function Good ({
             {content}
         </div>
     )
-}
+})
 
 export default connect(mapState2Props, mapAction2Props)(Good)

@@ -3,12 +3,13 @@ import { Action, Reducer } from "redux";
 export const INSERT_GOOD = "good_insert_good";
 
 interface GoodAction extends Action {
-    type: typeof INSERT_GOOD;
-    payload: string
+  type: typeof INSERT_GOOD;
+  payload: string;
 }
 
 const initState = {
-  hello: "world"
+  hello: "world",
+  yes: "good"
 };
 
 type InitState = typeof initState;

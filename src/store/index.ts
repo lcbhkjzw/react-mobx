@@ -7,4 +7,6 @@ export const reducers = combineReducers({
 
 export const store = createStore(reducers)
 
-export type Store = typeof store;
+const state = store.getState();
+
+export type GlobalState = typeof state;

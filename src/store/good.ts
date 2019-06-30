@@ -1,6 +1,7 @@
 import { Action, Reducer } from "redux";
 
 import { takeEvery } from 'redux-saga/effects'
+import { all } from "redux-saga/effects";
 
 export const INSERT_GOOD = "good_insert_good";
 
@@ -31,20 +32,21 @@ export const goodReducer: Reducer<InitState, GoodAction> = (
   }
 };
 
-export function* helloSaga() {
-  console.log('Hello Sagas!')
-  return void 0
-}
-
 const delay = (ms: number) => new Promise(res => setTimeout(res, ms))
 
-export function* incrementAsync() {
+function* incrementAsync() {
   yield delay(1000)
   console.log('hello')
 }
 
 // Our watcher Saga: spawn a new incrementAsync task on each INCREMENT_ASYNC
-export function* watchIncrementAsync() {
+function* watchIncrementAsync() {
   yield takeEvery(INSERT_GOOD, incrementAsync)
+}
+
+export function* goodSaga () {
+  yield all([
+    watchIncrementAsync()
+  ])
 }
 

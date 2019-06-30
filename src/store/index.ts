@@ -1,4 +1,4 @@
-import { goodReducer, helloSaga, watchIncrementAsync } from "./good";
+import { goodReducer, goodSaga } from "./good";
 import { combineReducers, createStore, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
 import { all } from "redux-saga/effects";
@@ -17,7 +17,7 @@ export const store = createStore(
 );
 
 function* rootSaga() {
-  yield all([helloSaga(), watchIncrementAsync()]);
+  yield all([goodSaga()]);
 }
 
 sagaMiddleware.run(rootSaga);

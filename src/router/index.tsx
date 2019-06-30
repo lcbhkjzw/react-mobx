@@ -1,8 +1,6 @@
-import React from 'react';
-import { Route } from "react-router-dom";
 import loadable from 'loadable-components';
 
-const routerMap = [
+export const routers = [
     {
         path: '/login',
         component: () => import('../views/login')
@@ -17,15 +15,3 @@ const routerMap = [
         component: loadable(item.component)
     }
 })
-
-export default function MyRouter () {
-    return (
-        <React.Fragment>
-            {
-                routerMap.map((item, index) => {
-                    return <Route key={index} {...item} />
-                })
-            }
-        </React.Fragment>
-    )
-}

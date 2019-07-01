@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "fmt": "prettier src/**/* --write",
+    "fmt": "prettier --write 'src/**/*.*'",
     "lint": "tslint --project ./"
   },
   "devDependencies": {
@@ -29,6 +29,8 @@
     "reflect-metadata": "^0.1.13",
     "ts-loader": "^6.0.4",
     "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.5.2",
     "typescript-tslint-plugin": "^0.5.3",
     "webpack": "^4.35.0",

@@ -7,14 +7,14 @@ import { goodReducer } from "./good";
 import { goodSaga } from "./good/saga";
 
 export const reducers = combineReducers({
-  good: goodReducer,
+  good: goodReducer
 });
 
 const sagaMiddleware = createSagaMiddleware();
 
 export const store = createStore(
   reducers,
-  composeWithDevTools(applyMiddleware(sagaMiddleware)),
+  composeWithDevTools(applyMiddleware(sagaMiddleware))
 );
 
 function* rootSaga() {

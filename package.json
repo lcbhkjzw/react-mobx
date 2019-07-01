@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "fmt": "prettier src/**/* --write"
+    "fmt": "prettier src/**/* --write",
+    "lint": "tslint --project ./"
   },
   "devDependencies": {
     "@types/history": "^4.7.2",
@@ -27,7 +28,9 @@
     "redux-devtools-extension": "^2.13.8",
     "reflect-metadata": "^0.1.13",
     "ts-loader": "^6.0.4",
+    "tslint": "^5.18.0",
     "typescript": "^3.5.2",
+    "typescript-tslint-plugin": "^0.5.3",
     "webpack": "^4.35.0",
     "webpack-cli": "^3.3.5",
     "webpack-dev-server": "^3.7.2",

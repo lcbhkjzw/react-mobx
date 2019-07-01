@@ -1,9 +1,10 @@
-import { goodReducer, goodSaga } from "./good";
 import { combineReducers, createStore, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
 import { all } from "redux-saga/effects";
 
 import { composeWithDevTools } from "redux-devtools-extension";
+import { goodReducer } from "./good";
+import { goodSaga } from "./good/saga";
 
 export const reducers = combineReducers({
   good: goodReducer

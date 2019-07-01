@@ -1,8 +1,9 @@
 import React from 'react';
 import { Dispatch } from 'redux';
-import { INSERT_GOOD } from '../../store/good';
+
 import { GlobalState } from '../../store';
 import { connect } from 'react-redux';
+import { INSERT_GOOD } from '../../store/good';
 
 type GoodOwnProps = {
     content:string;

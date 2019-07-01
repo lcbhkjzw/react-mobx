@@ -5,6 +5,8 @@ import { GlobalState } from "../../store";
 import { connect } from "react-redux";
 import { INSERT_GOOD } from "../../store/good";
 
+import style from "./style.less";
+
 type GoodOwnProps = {
   content: string;
 };
@@ -30,7 +32,7 @@ const mapAction2Props = (dispatch: Dispatch) => {
 const Good = React.memo(function Good({ content, dispatch }: GoodProps) {
   return (
     <div
-      className="hello"
+      className={style.hello}
       onClick={() => {
         dispatch({
           type: INSERT_GOOD,

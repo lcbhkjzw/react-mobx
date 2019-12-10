@@ -6,4 +6,3 @@ import App from "./App";
 const container = document.getElementById("react-app");
 
 render(<App />, container);
-
